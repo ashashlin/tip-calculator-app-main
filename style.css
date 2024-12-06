@@ -158,7 +158,7 @@ body {
   padding: 0;
 }
 
-.calculator__tip-box,
+.calculator__tip,
 .calculator__tip-custom {
   display: flex;
   justify-content: center;
@@ -169,10 +169,22 @@ body {
   color: var(--white);
   border-radius: .3125rem;
   cursor: pointer;
+  transition: background-color 150ms, color 150ms;
+}
+
+.calculator__tip:hover,
+.calculator__tip-custom:hover {
+  background-color: var(--light-turquoise);
+  color: var(--dark-teal);
 }
 
 .calculator__tip-radio {
   display: none;
+}
+
+.calculator__tip:has(.calculator__tip-radio:checked) {
+  background-color: var(--turquoise);
+  color: var(--dark-teal);
 }
 
 .calculator__tip-custom {
