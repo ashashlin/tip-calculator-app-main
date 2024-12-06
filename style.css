@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --ff-1: 'Space Mono';
+
+  --fs-1: .8125rem;
+  --fs-2: 1rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.5rem;
+  --fs-5: 1.75rem;
+  --fs-6: 2rem;
+  --fs-7: 3rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --light-cyan: #C5E4E7;
+  --medium-cyan: #5E7A7D;
+  --dark-cyan: #3D6666;
+  --pale-blue: #F3F9FA;
+  --dark-teal: #00474B;
+  --turquoise: #26C2AE;
+  --light-turquoise: #9FE8DF;
+  --white: #FFFFFF;
+  --grayish-green: #7F9D9F;
+  --orange: #E17457;
+}
+
+body {
+  font-family: var(--ff-1);
+}
+
+.btn {
+  color: inherit;
+  width: 100%;
+  border: none;
+  border-radius: .3125rem;
+  cursor: pointer;
+}
+
+.main__tip-calculator {
+  background-color: var(--light-cyan);
+  padding: 3.125rem 0;
+}
+
+.tip-calculator__logo {
+  margin: 0 auto 2.5rem;
+}
+
+.tip-calculator__calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--white);
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-700);
+  color: var(--dark-teal);
+}
+
+.calculator__bill,
+.calculator__people {
+  position: relative;
+}
+
+.calculator__label {
+  display: block;
+  font-size: var(--fs-2);
+  color: var(--medium-cyan);
+  margin-bottom: .375rem;
+}
+
+.calculator__input {
+  text-align: right;
+  background-color: var(--pale-blue);
+  color: var(--dark-teal);
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: .375rem 1rem;
+  border-radius: .3125rem;
+}
+
+.calculator__bill-dollar-sign,
+.calculator__people-icon {
+  position: absolute;
+  left: 1.25rem;
+  bottom: .9rem;
+}
+
+.calculator__select-tip .calculator__label {
+  margin-bottom: 1rem;
+}
+
+.calculator__tips {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  border: none;
+  padding: 0;
+}
+
+.calculator__tip-box,
+.calculator__tip-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--dark-teal);
+  color: var(--white);
+  border-radius: .3125rem;
+  cursor: pointer;
+}
+
+.calculator__tip-radio {
+  display: none;
+}
+
+.calculator__tip-custom {
+  background-color: var(--pale-blue);
+  color: var(--medium-cyan);
+}
+
+.calculator__tip-custom-input {
+  text-align: right;
+  background-color: var(--pale-blue);
+  color: var(--dark-teal);
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 1rem;
+  border-radius: .3125rem;
+}
+
+.calculator__result {
+  font-weight: var(--fw-700);
+  background-color: var(--dark-teal);
+  color: var(--white);
+  padding: 2rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.calculator__result-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.calculator__result-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculator__result-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator__result-text span {
+  font-size: var(--fs-1);
+  color: var(--grayish-green);
+}
+
+.calculator__result-tip,
+.calculator__result-total {
+  font-size: var(--fs-6);
+  color: turquoise;
+}
+
+.calculator__reset {
+  text-transform: uppercase;
+  font-size: var(--fs-3);
+  background-color: var(--turquoise);
+  color: var(--dark-teal);
+  padding: .5625rem 2rem;
+  opacity: .2;
+  cursor: auto;
+}
+
+@media (min-width: 90rem) {
+  .main__tip-calculator {
+    padding-top: 10.25rem;
+  }
+
+  .tip-calculator__logo {
+    margin-bottom: 5.5rem;
+  }
+
+  .tip-calculator__calculator {
+    flex-direction: row;
+    gap: 3rem;
+    max-width: 57.5rem;
+  }
+
+  .calculator__form {
+    flex: 1;
+    gap: 2.5rem;
+  }
+
+  .calculator__result {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+  }
+
+  .calculator__result-tip, .calculator__result-total {
+    font-size: var(--fs-7);
+  }
+
+  .calculator__reset {
+    margin-top: auto;
+  }
+}
